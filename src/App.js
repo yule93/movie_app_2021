@@ -8,11 +8,11 @@ class App extends React.Componet {    // class component
 
   add = () => {
     console.log("add");
-    this.setState({count: 1});
+    this.setState(current => ({count: current.count +1 }));    // best way to do not use state directly
   };
   minus = () => {
     console.log("minus");
-    this.setState({count: -1});
+    this.setState(current => ({count: current.count -1 }));
   };
 
   render() {    // automatically compile
