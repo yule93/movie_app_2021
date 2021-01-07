@@ -8,9 +8,11 @@ class App extends React.Componet {    // class component
 
   add = () => {
     console.log("add");
+    this.setState({count: 1});
   };
   minus = () => {
     console.log("minus");
+    this.setState({count: -1});
   };
 
   render() {    // automatically compile
