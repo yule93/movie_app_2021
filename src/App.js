@@ -1,22 +1,25 @@
 import React from 'react';
-import PropTypes from "prop-types";
+import axios from 'axios';
 
-class App extends React.Componet {    // class component
+class App extends React.Component {    // class component
 
   state = {
-    isLoading: true
+    isLoading: true,
+    movies: []
+  };
+
+  getMovies = async () => {   // async를 사용해야 await를 사용할 수 있다. async는 비동기를 의미.
+    const movies = await axios.get("https://yts-proxy.nomadcoders1.now.sh/list_movies.json");
   };
   componentDidMount() {
-    setTimeout(() => {
-      this.setState({isLoading: false});    // done fatching data
-    }, 5000);
+    this.getMovies();
   }
 
   render() {    // automatically compile
     const { isLoading } = this.state;
     return (
     <div>
-      {this.state.isLoading ? "Loading..." : "We are ready"}
+      {isLoading ? "Loading..." : "We are ready"}
     </div>
     );
   }
