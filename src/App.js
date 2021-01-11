@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import Movie from "./Movie";
-
+import "./Movie.css";
 
 class App extends React.Component {    // class component
 
@@ -25,18 +25,26 @@ class App extends React.Component {    // class component
   render() {    // automatically compile
     const { isLoading, movies } = this.state;
     return (
-    <div>
-      {isLoading ? "Loading..." : movies.map( movie => {
-        console.log(movie);
-        return <Movie
-          key = {movie.id}
-          id = {movie.id}
-          year = {movie.year}
-          title = {movie.title}
-          summary = {movie.summary}
-          poster = {movie.poster}/>
-      })}
-    </div>
+    <section class = "container">
+      {isLoading ? (<div class="loader">
+          <span calss = "loader__text">Loading...</span>
+        </div>
+      ) : (
+        <div class = "movies">
+          {movies.map( movie => {
+            console.log(movie);
+            return <Movie
+              key = {movie.id}
+              id = {movie.id}
+              year = {movie.year}
+              title = {movie.title}
+              summary = {movie.summary}
+              poster = {movie.poster}
+            />
+        })}
+        </div>
+      )}
+    </section>
     );
   }
 }
