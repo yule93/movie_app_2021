@@ -22,15 +22,15 @@ class App extends React.Component {    // class component
     this.getMovies();
   }
 
-  render() {    // automatically compile
+  render() {    // automatically compile, 'class' html tag attribute is confused with 'App class'
     const { isLoading, movies } = this.state;
     return (
-    <section class = "container">
-      {isLoading ? (<div class="loader">
-          <span calss = "loader__text">Loading...</span>
+    <section className = "container">
+      {isLoading ? (<div className="loader">
+          <span calssName = "loader__text">Loading...</span>
         </div>
       ) : (
-        <div class = "movies">
+        <div className = "movies">
           {movies.map( movie => {
             console.log(movie);
             return <Movie
@@ -40,6 +40,7 @@ class App extends React.Component {    // class component
               title = {movie.title}
               summary = {movie.summary}
               poster = {movie.poster}
+              genres = {movie.genres}
             />
         })}
         </div>
