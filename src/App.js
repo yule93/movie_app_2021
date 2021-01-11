@@ -9,7 +9,12 @@ class App extends React.Component {    // class component
   };
 
   getMovies = async () => {   // async를 사용해야 await를 사용할 수 있다. async는 비동기를 의미.
-    const movies = await axios.get("https://yts-proxy.nomadcoders1.now.sh/list_movies.json");
+    const {
+      data: {
+        data: { movies }
+      }
+    } = await axios.get("https://yts-proxy.nomadcoders1.now.sh/list_movies.json");
+    this.setState({movies: movies});
   };
   componentDidMount() {
     this.getMovies();
