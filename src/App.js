@@ -27,7 +27,7 @@ class App extends React.Component {    // class component
     return (
     <section className = "container">
       {isLoading ? (<div className="loader">
-          <span calssName = "loader__text">Loading...</span>
+          <span className = "loader__text">Loading...</span>
         </div>
       ) : (
         <div className = "movies">
@@ -39,7 +39,7 @@ class App extends React.Component {    // class component
               year = {movie.year}
               title = {movie.title}
               summary = {movie.summary}
-              poster = {movie.poster}
+              poster = {movie.medium_cover_image}
               genres = {movie.genres}
             />
         })}

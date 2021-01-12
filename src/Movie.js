@@ -1,15 +1,16 @@
 import React from "react";
 import PropTypes from "prop-types";
+import "./Movie.css";
 // it doesnt need to use state
 
-function Movie({ id, year, title, summary, poster, genres }) {
+function Movie({ year, title, summary, poster, genres }) {
     return (
-        <div class="movies_movie">
+        <div className="movies_movie">
             <label></label>
             <img src = {poster} alt = {title} title = {title} />
-            <div class="movie__data">
-                <h3 class="movie__title"> {title} </h3>
-                <h5 class="movie__year">{year}</h5>
+            <div className="movie__data">
+                <h3 className="movie__title"> {title} </h3>
+                <h5 className="movie__year">{year}</h5>
                 <ul className = "movie__genres">
                     {genres.map((genre, index) => (
                         <li key={index} className="genres__genre">
@@ -17,7 +18,7 @@ function Movie({ id, year, title, summary, poster, genres }) {
                         </li>
                     ))}
                 </ul>
-                <p class="movie__summary">{summary}</p>
+                <p className="movie__summary">{summary.slice(0, 100)}...</p>
             </div>
         </div>
         );
