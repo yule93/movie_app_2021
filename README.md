@@ -1,6 +1,6 @@
 # Movie App 2021
 
-![썸네일](https://drive.google.com/file/d/1-YN0uTxBe3u3D_cOSrb0HTEyjz57cgds/view?usp=sharing)
+![썸네일](https://github.com/yule93/movie_app_2021/blob/main/src/movie_app_sumnail.PNG)
 
 Created by React JS
 
