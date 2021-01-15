@@ -1,4 +1,5 @@
 import React from 'react';
+import "./Detail.css";
 
 class Detail extends React.Component {
     // render()가 먼저 일어나고 componentDidMount()가 일어난다
@@ -11,19 +12,17 @@ class Detail extends React.Component {
     render() {
         const {location} = this.props;
         if(location.state) {
-            return <span>{ location.state.title }</span>;
+            return <div className = "movie">
+                <div className = "movie__title">
+                    <h2>{ location.state.title }</h2>
+                </div>
+                <img src={location.state.poster} alt={location.state.title} title={location.state.title} />
+            </div>;
         }
         else {
             return null;
         }
     }
 }
-
-/*function Detail({location}) {
-    console.log(location);
-    return (
-        <div>hello</div>
-    );
-}*/
 
 export default Detail;
